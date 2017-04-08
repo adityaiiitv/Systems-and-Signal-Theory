@@ -1,0 +1,12 @@
+clear all;
+close all;
+Fs=8000;
+f=100;
+A=1;
+bits=16;
+phi=0;
+len=2;
+t=[0:1/Fs:1];
+x=A*sin(2*pi*f.*t+phi);
+plot(t,x);
+playaudio(x);

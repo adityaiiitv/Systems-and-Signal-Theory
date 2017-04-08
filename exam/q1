@@ -1,0 +1,43 @@
+////////(a)
+x(t)=1;t=0 to 0.001
+T=0.001
+X(f)=integ(0,0,001){x(t)*e^-(jft)}dt
+	 =(-1/(jf))*{e^-jft}use limits
+	 ans X(f)= (1- e^-jf/1000)/jf
+	 
+magnitude|X(f)|=root(sin^2(f/1000) + (1+cos f/1000)^2)) / |f|
+					= |2sin(ft/2)/f|
+					
+argument= taninv((cos(fT)-1)/sin(fT)) =  taninv sin(fT/2)/cos(fT/2)
+			= -fT/2
+			
+////////(b)
+
+xts=x(t).c(t)
+pic///
+DTFT=x(omega)= sum(-inf to inf){x(n) e^-jwn}
+n=0,1,2 only
+arg	=	1	+	e^-j*omega	+ e^-2j*omega
+find mag and compare with previous
+
+////////(c)
+Fmax=1000
+Fs>=2*Fmax
+=2000 so no aliasing
+IF Fs dec then aliasing occurs
+
+///////(d)
+remains same
+
+///////(e)
+a=[1 1 1 1 1 1 1 1 1 1]
+take fft
+y=abs(fft(a));
+plot y;
+
+
+///////(f)
+a=[1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 ]
+take fft
+curve becomes smooth
+in limiting case it becomes DTFT and becomes smoother on further padding before limitng case

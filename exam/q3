@@ -1,0 +1,42 @@
+M*(d^2(x(t))/dt^2) + kx(t) = bdx(t) = Mgu(t)
+
+take laplace of the above eqn
+x(t) <=> 	X(S)
+M(s^2)X(S) = Mg/(s(Ms^2 + bs + k))
+put values M,b,k,g
+X(s)= 100/(s(10s^2 + 100S + 1000))
+
+now find residues and poles for the above eqn
+[r,p]=residue([100],[10,100,1000,0])
+r=residue p=poles
+X(s)=(-0.05 + 0.02887i)/(s-(-5 + 8.66025i)) + (-0.05 - 0.02887i)/(s-(-5-8.66025i)) + 0.1/s
+now we take laplace 1/s-a <=> e^-at*u(t)
+
+now after taking inverse of this eqn
+x(t)=(-0.05-0.02887i)e^(-(5+8.66025i)t)u(t) + (-0.05 + 0.02887i)e^(-(5-8.66025i))u(t) + 0.1(u(t))
+
+now t->inf
+x(inf)=0.1
+ans =0.1 meter
+
+r=
+-0.05 + 0.02887i
+-0.05 - 0.02887i
+0.1 + 0i
+
+p=
+-5 + 8.66025i
+-5 - 8.66025i
+0 + 0i
+
+////////(d)
+b^2-4mk>0
+relation bw b and k
+put m=10
+
+////////(e)
+when b<0
+find m
+reason: it wont damp as b is the damping coeff
+
+put m=1 find b and depict damping
